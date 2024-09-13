@@ -19,6 +19,11 @@ public class Main {
         for (char c = 'a'; c <= 'z'; c++) {
             characterValueMap.put(c, c - 'a' + 1);
         }
+
+        // Create the mapping for all lowercase letters from 'a' to 'z'
+        for (char c = 'A'; c <= 'Z'; c++) {
+            characterValueMap.put(c, c - 'A' + 1);
+        }
         
         int firstnameNum = 0;
         int middlenameNum = 0;
@@ -40,7 +45,11 @@ public class Main {
                 while (firstnameNum > 255) {
                     firstnameNum -= 256;
                 }
-            }    
+            } else {
+                System.out.println("Invalid Character!");
+                scannerObj.close();
+                return;
+            }
         }
 
         for (int i = 0; i < middlenameString.length(); i++) {
@@ -50,6 +59,10 @@ public class Main {
                 while (middlenameNum > 255) {
                     middlenameNum -= 256;
                 }
+            } else {
+                System.out.println("Invalid Character!");
+                scannerObj.close();
+                return;
             }
         }
 
@@ -60,6 +73,10 @@ public class Main {
                 while (lastnameNum > 255) {
                     lastnameNum -= 256;
                 }        
+            } else {
+                System.out.println("Invalid Character!");
+                scannerObj.close();
+                return;
             }
         }
 
